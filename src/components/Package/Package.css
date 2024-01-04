@@ -1,0 +1,29 @@
+.di{
+    border:2px solid rgb(2, 2, 60); 
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+   
+}
+.di:hover{
+    transform: scale(1.1);
+}
+.div1{
+    transform: rotate(90deg);
+}
+.back{
+    background: url('../../assets/alessio-soggetti-gdE-5Oui1Y0-unsplash.jpg'),linear-gradient(to bottom, #000000,rgb(66, 64, 64), rgb(249, 249, 249))   ;
+
+    /* background-size: 100% 100%; */
+    background-blend-mode: overlay;  
+    background-size: cover;
+    /* background-attachment: fixed; */
+    
+    background-repeat: no-repeat;
+    
+    
+
+    
+    
+
+}
+

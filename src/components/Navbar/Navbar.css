@@ -31,16 +31,16 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 2px dotted transparent; /* Set the initial border to transparent */
+    border: 2px dotted #ffffff; /* Set the initial border to transparent */
     border-radius: 50%;
     box-sizing: border-box;
     animation: rotate 5s linear infinite;
     transition: border 0.8s ease; /* Add a transition effect on the border property */
 }
 
-.profile:hover::after {
-    border: 2px dotted #ffffff; /* Change the border to white when hovering */
-}
+/* .profile:hover::after {
+    border: 2px dotted #ffffff; 
+} */
 
 @keyframes rotate {
     0% {

@@ -39,7 +39,7 @@ const Social= () => {
             },
             willClose: () => {
                 clearInterval(timerInterval);
-                navigate("/")
+                // navigate("/")
             }
             }).then((result) => {
             /* Read more about handling dismissals below */
@@ -48,11 +48,11 @@ const Social= () => {
             }
             });
             navigate('/')
-            // axios.post('https://task-management-server-red-delta.vercel.app/users', userInfo)
-            // .then(res =>{
-            //     console.log(res.data);
-            //     navigate('/dashboard/profile');
-            // })
+            axios.post('http://localhost:5000/users', userInfo)
+            .then(res =>{
+                console.log(res.data);
+                navigate('/');
+            })
             
         })
     }

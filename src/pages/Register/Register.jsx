@@ -41,28 +41,28 @@ const Register = () => {
                       
                     }
                     logout()
-                    .then(res=>navigate('/login'))
+                    .then(res=>{
                     
-                    // axios.post('https://task-management-server-red-delta.vercel.app/users', userInfo)
-                    //     .then(res => {
-                    //         console.log(res,"after post from register")
-                    //         if (res.data.insertedId) {
-                    //             console.log('user added')
-                    //             reset();
-                    //             Swal.fire({
-                    //                 position: 'top-end',
-                    //                 icon: 'success',
-                    //                 title: 'Account Created successfully',
-                    //                 showConfirmButton: false,
-                    //                 timer: 1500
-                    //             });
-                    //             logout()
-                    //             .then(res=>navigate('/login'))
+                    axios.post('http://localhost:5000/users', userInfo)
+                        .then(res => {
+                            console.log(res,"post from register")
+                            if (res.data.insertedId) {
+                                console.log('user added')
+                                reset();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Account Created ',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                logout()
+                                .then(res=>navigate('/login'))
 
 
                                
-                    //         }
-                    //     })
+                            }
+                        })})
 
 
                 })

@@ -1,0 +1,23 @@
+[
+
+    {
+      "title": "Nature Adventure Expedition",
+      "price": "349",
+      "image": "https://i.ibb.co/PMzr248/leo-6-E6o-Mx-69-Ns-unsplash.jpg",
+      "tour_type": "Hiking"
+    },
+
+    {
+        "title": "Historical Heritage Tour",
+        "price": "299",
+        "image": "https://i.ibb.co/fS5C0Dr/budi-puspa-wijaya-Lcv7dqnw5-Y4-unsplash.jpg",
+        "tour_type": "Walking"
+      },
+    {
+      "title": "Aerial Bliss Airrides",
+      "price": "449",
+      "image": "https://i.ibb.co/F3gKhPN/sutirta-budiman-kj-OBqw-MUn-Ww-unsplash.jpg",
+      "tour_type": "Air Rides"
+    }
+  ]
+  
