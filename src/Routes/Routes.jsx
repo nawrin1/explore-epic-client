@@ -7,6 +7,7 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PackageDetails from "../pages/PackageDetails/PackageDetails";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,9 @@ export const router = createBrowserRouter([
         },{
           path:'/register',
           element:<Register></Register>
+        },{
+          path:'/details/:id',
+          element:<PackageDetails></PackageDetails>
         }
       ]
     },

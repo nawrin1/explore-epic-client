@@ -6,15 +6,17 @@ import './Package.css'
 import { FaHiking } from "react-icons/fa";
 import { FaWalking } from "react-icons/fa";
 import { TbAirBalloon } from "react-icons/tb";
+import { FaHeart } from "react-icons/fa";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const Package = () => {
 
     const {data: pack = [], isFetched } = useQuery({
         queryKey: ['packages'], 
         queryFn: async() =>{
-            const res = await axios.get('./tour.json');
+            const res = await axios.get('http://localhost:5000/package');
             return res.data;
         }
     })
@@ -53,8 +55,9 @@ const Package = () => {
             <div className="flex flex-col lg:flex-row  gap-4 justify-center mx-auto my-20 items-center " data-aos="fade-up"
      data-aos-anchor-placement="top-bottom">
                 <div className="di w-[230px] h-[400px] bg-slate-50  " >
-                <div>
+                <div className="relative">
                 <img src={pack[0].image} alt="" className="h-[190px]" />
+                <div className="absolute bottom-2 left-1 "><FaHeart className="text-white"></FaHeart></div>
 
                     </div>
 
@@ -69,13 +72,14 @@ const Package = () => {
 
                     </div>
                     <div className="flex justify-center items-center mt-4">
-                        <button className="btn btn-outline btn-sm bg-slate-300 ">DETAILS</button>
+                    <Link to={`details/${pack[0]._id}`}><button className="btn btn-outline btn-sm bg-slate-300 ">DETAILS</button></Link>
                     </div>
                     
                 </div>
                 <div className="di w-[230px] h-[400px] lg:mt-20 bg-slate-50  " >
-                    <div> 
+                    <div className="relative"> 
                     <img src={pack[1].image} alt="" className="h-[180px]" />
+                    <div className="absolute bottom-2 left-1 "><FaHeart className="text-white"></FaHeart></div>
 
                     </div>
                     <div className="p-2">
@@ -85,13 +89,14 @@ const Package = () => {
 
                     </div>
                     <div className="flex justify-center items-center mt-4">
-                        <button className="btn btn-outline btn-sm bg-slate-300 ">DETAILS</button>
+                        <Link to={`details/${pack[1]._id}`}><button className="btn btn-outline btn-sm bg-slate-300 ">DETAILS</button></Link>
                     </div>
 
                 </div>
                 <div className="di w-[230px] h-[400px] bg-slate-50 ">
-                    <div>
+                    <div className="relative">
                     <img src={pack[2].image} alt="" className="h-[190px]" />
+                    <div className="absolute bottom-2 left-1 "><FaHeart className="text-white"></FaHeart></div>
 
                     </div>
                     <div className="p-2">
@@ -100,11 +105,14 @@ const Package = () => {
                         {/* <p>{pack[0].price}</p> */}
                     </div>
                     <div className="flex justify-center items-center mt-4">
-                        <button className="btn btn-outline btn-sm bg-slate-300 ">DETAILS</button>
+                    <Link to={`details/${pack[2]._id}`}><button className="btn btn-outline btn-sm bg-slate-300 ">DETAILS</button></Link>
                     </div>
                     
                 </div>
 
+         </div>
+         <div className="flex items-center justify-center mx-auto">
+            <button className="btn btn-outline  border-x-4 border-yellow-400 text-2xl font-serif font-semibold shadow-lg shadow-slate-400">All Packages</button>
          </div>
 
             

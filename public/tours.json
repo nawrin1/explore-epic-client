@@ -1,0 +1,81 @@
+[
+    {
+      "title": "Nature Adventure Expedition",
+      "price": "349",
+      "image": "https://i.ibb.co/PMzr248/leo-6-E6o-Mx-69-Ns-unsplash.jpg",
+      "image2": "https://i.ibb.co/9y6xnnY/elise-zimmerman-Lgf980w-XB9-Y-unsplash.jpg",
+      "image3": "https://i.ibb.co/z7Wc4Lf/andrew-svk-Td-Rl-GDRW6r-U-unsplash.jpg",
+      "image4": "https://i.ibb.co/DQdxHj9/ryan-james-christopher-m51-HRYyneww-unsplash.jpg",
+      "image5": "https://i.ibb.co/4Wyfn6C/david-brooke-martin-b01g-Zlwpmuc-unsplash.jpg",
+      "tour_type": "Hiking",
+      "description": "Embark on an unforgettable hiking adventure surrounded by pristine nature. This immersive 4-day journey in Banff, Canada, takes you through breathtaking trails, wildlife encounters, and scenic helicopter tours. Experience the tranquility of Moraine Lake and the adrenaline of exploring the Rocky Mountains. An adventure-filled itinerary awaits!",
+      "location": "Banff, Canada",
+      "duration": "4 days",
+      "itinerary": [
+        "Arrival in Banff",
+        "Hiking through scenic trails in Banff National Park",
+        "Exploring wildlife in the area",
+        "Adventure day in the Rocky Mountains"
+      ]
+    },
+    {
+      "title": "Historical Heritage Tour",
+      "price": "299",
+      "image": "https://i.ibb.co/fS5C0Dr/budi-puspa-wijaya-Lcv7dqnw5-Y4-unsplash.jpg",
+      "image2": "https://i.ibb.co/pb82FyL/yoanna-yordanova-M7zp-Eu4-Uq-Q-unsplash.jpg",
+      "image3": "https://i.ibb.co/pfH9y8Y/manasa-dendukuri-b-TLKzahv1-Zw-unsplash.jpg",
+      "image4": "https://i.ibb.co/JHyjn8c/cristina-gottardi-I1-Lv2y-X67-GI-unsplash.jpg",
+      "image5": "https://i.ibb.co/G0fnmQv/david-kohler-VFRTXGw1-Vj-U-unsplash.jpg",
+      "tour_type": "Walking",
+      "description": "Immerse yourself in the rich history and heritage of fascinating locations. This 4-day walking tour in Rome, Italy, includes visits to ancient Roman sites, guided tours through historical districts, a trip to the Vatican City, and a day excursion to Pompeii. Explore the wonders of Rome and depart with a deep appreciation for its historical legacy.",
+      "location": "Rome, Italy",
+      "duration": "4 days",
+      "itinerary": [
+        "Exploration of ancient Roman sites",
+        "Guided walking tour through historical districts",
+        "Visit to the Vatican City",
+        "Day trip to Pompeii"
+      ]
+    },
+    {
+      "title": "Aerial Bliss Airrides",
+      "price": "449",
+      "image": "https://i.ibb.co/F3gKhPN/sutirta-budiman-kj-OBqw-MUn-Ww-unsplash.jpg",
+      "image2": "https://i.ibb.co/kqtfjdH/belle-hunt-ZQqxvre-Oev4-unsplash.jpg",
+      "image3": "https://i.ibb.co/YpCNMkP/richard-lin-ic-BUp-VCix-GA-unsplash.jpg",
+      "image4": "https://i.ibb.co/1Zf5RJ0/anoof-junaid-J16ep2-Lf-Hw-Y-unsplash.jpg",
+      "image5": "https://i.ibb.co/cCVthkS/cem-sagisman-b-LS61-Fd-P8-E-unsplash.jpg",
+      "tour_type": "Air Rides",
+      "description": "Experience breathtaking views from above in a thrilling aerial adventure. This 4-day tour in Queenstown, New Zealand, features scenic helicopter tours over the Southern Alps, an adventure day in the mountains, bungee jumping, and adrenaline-pumping activities. Depart Queenstown with memories of an exhilarating airborne journey.",
+      "location": "Queenstown, New Zealand",
+      "duration": "4 days",
+      "itinerary": [
+        "Scenic helicopter tour over Queenstown",
+        "Adventure day in the Southern Alps",
+        "Bungee jumping and adrenaline activities",
+        "Cruise on Lake Wakatipu"
+      ]
+    },
+
+
+    {
+      "title": "Wildlife Safari Expedition",
+      "price": "429",
+      "image": "https://i.ibb.co/ZLgrjR8/henrik-leth-Mt-P3-YHj8-JOY-unsplash.jpg",
+      "image2": "https://i.ibb.co/dc1fN7k/rick-hardabura-xwd-Xh-Sl-CUPw-unsplash.jpg",
+      "image3": "https://i.ibb.co/wdHz21q/damian-patkowski-T-Lfv-X-7-IVg-unsplash.jpg",
+      "image4": "https://i.ibb.co/QFyjQQw/redcharlie-nf7-W-hn6-DKQ-unsplash.jpg",
+      "image5": "https://i.ibb.co/zmWSyT5/meshack-mwash-m-Bw-YFISS7vc-unsplash.jpg",
+      "tour_type": "Wildlife",
+      "description": "Embark on a thrilling 4-day wildlife safari expedition. Traverse through picturesque landscapes, encounter majestic wildlife, and experience the raw beauty of nature. From game drives to guided walks, every moment promises an adventure. Immerse yourself in the heart of the wilderness and create lasting memories.",
+      "location": "Maasai Mara, Kenya",
+      "duration": "4 days",
+      "itinerary": [
+        "Game drive in Maasai Mara",
+        "Guided bushwalk in the wilderness",
+        "Visit to a Maasai village",
+        "Balloon safari over the savannah"
+      ]
+    }
+  ]
+  
