@@ -14,6 +14,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 // import { AuthContext } from '../../provider/AuthProvider';
 // import img1 from '../../../assets/task.png'
 // import toast from "react-hot-toast";
@@ -22,6 +23,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 const Register = () => {
     const {user}=useContext(AuthContext)
     const navigate=useNavigate()
+    const axiosPublic=useAxiosPublic()
     const { createNewUser, updateProfileUser,logout } = useContext(AuthContext);
     const { register, handleSubmit, reset, formState: { errors },setError,control } = useForm();
     const onSubmit=data=>{
@@ -37,13 +39,14 @@ const Register = () => {
                     const userInfo = {
                         name: data.name,
                         email: data.email,
-                        photo:data.photoURL
+                        photo:data.photoURL,
+                        role:'user'
                       
                     }
                     logout()
                     .then(res=>{
                     
-                    axios.post('http://localhost:5000/users', userInfo)
+                    axiosPublic.post('/users', userInfo)
                         .then(res => {
                             console.log(res,"post from register")
                             if (res.data.insertedId) {

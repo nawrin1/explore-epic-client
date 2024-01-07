@@ -22,7 +22,8 @@ const Social= () => {
             const userInfo = {
                 email: result.user?.email,
                 name: result.user?.displayName,
-                photo:result.user.photoURL
+                photo:result.user.photoURL,
+                role:'user'
             }
             let timerInterval;
             Swal.fire({

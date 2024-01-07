@@ -8,6 +8,7 @@ import About from "../pages/About/About";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PackageDetails from "../pages/PackageDetails/PackageDetails";
+import DashboardHome from "../pages/AdminDashboard/DashboardHome/DashboardHome";
 
 export const router = createBrowserRouter([
     {
@@ -31,5 +32,8 @@ export const router = createBrowserRouter([
           element:<PackageDetails></PackageDetails>
         }
       ]
-    },
+    },{
+      path:'dashboard',
+      element:<DashboardHome></DashboardHome>
+    }
   ]);

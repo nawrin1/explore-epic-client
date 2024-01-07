@@ -5,10 +5,13 @@ import './Navbar.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useAdmin from '../../hooks/useAdmin';
 const Navbar = () => {
     console.log(useLocation().pathname)
     const {user,logout}=useContext(AuthContext)
     const navigate=useNavigate()
+    const admin=useAdmin()
+    console.log(admin[0],"from nav")
     const handleLogOut=()=>{
       logout()
       .then(() => {     
@@ -39,6 +42,7 @@ const Navbar = () => {
       <li className={`navli ${ useLocation().pathname=== '/' ? 'active' : ''}`}><Link to="/">Homepage</Link></li>
       <li className={`navli ${ useLocation().pathname=== '/about' ? 'active' : ''}`}><Link to="/about">About</Link></li>
       <li className={`navli ${ useLocation().pathname=== '/contact' ? 'active' : ''}`}><Link to="/contact">Contact</Link></li>
+      <li className={`navli ${ useLocation().pathname=== '/dashboard' ? 'active' : ''}`}><Link to="/dashboard">Dashboard</Link></li>
       
         {
           user?<li onClick={handleLogOut}><Link>Logout</Link></li>:<li className={`navli ${ useLocation().pathname=== '/login' ? 'active' : ''}`}><Link to="/login">Login</Link></li>

@@ -9,13 +9,15 @@ import './PackageDetails.css'
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const PackageDetails = () => {
     const {id}=useParams()
+    const axiosPublic=useAxiosPublic()
     const {data: packages = [], isFetched } = useQuery({
         queryKey: ['packagedetails'], 
         queryFn: async() =>{
-            const res = await axios.get(`http://localhost:5000/package?id=${id}`);
+            const res = await axiosPublic.get(`/package?id=${id}`);
             return res.data;
         }
     })
