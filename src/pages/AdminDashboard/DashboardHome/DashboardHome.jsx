@@ -46,7 +46,7 @@ const DashboardHome = () => {
                             <NavLink to="/dashboard/allUsers"><div  className=" mb-[2px] text-[20px]"><LuMessageSquareDashed></LuMessageSquareDashed></div>All Users</NavLink>
                         </li>
                        <li className="dash font-Sora font-semibold">
-                            <NavLink to="/dashboard/package"><div  className=" mb-[2px] text-[20px]"><GoPackageDependents></GoPackageDependents></div>Add Package</NavLink>
+                            <NavLink to="/dashboard/addPackage"><div  className=" mb-[2px] text-[20px]"><GoPackageDependents></GoPackageDependents></div>Add Package</NavLink>
                         </li>
                        {/* <li className="font-Sora font-semibold">
                             <NavLink to="/adminDashboard/surveyStatus"><div><LuMessageSquareDashed></LuMessageSquareDashed></div>Survey Status</NavLink>

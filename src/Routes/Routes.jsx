@@ -10,6 +10,8 @@ import Register from "../pages/Register/Register";
 import PackageDetails from "../pages/PackageDetails/PackageDetails";
 import DashboardHome from "../pages/AdminDashboard/DashboardHome/DashboardHome";
 import AllUsers from "../pages/AdminDashboard/AllUsers/AllUsers";
+import AdminProfile from "../pages/AdminDashboard/AdminProfile/AdminProfile";
+import AddPackage from "../pages/AdminDashboard/AddPackage/AddPackage";
 
 export const router = createBrowserRouter([
     {
@@ -40,6 +42,12 @@ export const router = createBrowserRouter([
         {
           path:'allUsers',
           element:<AllUsers></AllUsers>
+        },{
+          path:'profile',
+          element:<AdminProfile></AdminProfile>
+        },{
+          path:'addPackage',
+          element:<AddPackage></AddPackage>
         }
 
       ]
