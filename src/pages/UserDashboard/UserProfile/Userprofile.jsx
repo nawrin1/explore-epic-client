@@ -3,7 +3,7 @@ import { AuthContext } from "../../../provider/AuthProvider";
 import { Watch } from "react-loader-spinner";
 
 
-const AdminProfile = () => {
+const UserProfile = () => {
     const {user}=useContext(AuthContext)
     if (!user){
         return (
@@ -21,18 +21,17 @@ const AdminProfile = () => {
     }
     
     return (
-        <div className="flex justify-center">
+        <div className="flex  justify-center">
            
-            <div className="h-[350px] w-[70%] flex flex-col lg:flex-row justify-center bg-slate-200 rounded-2xl p-4  gap-4  place-items-center ">
-                <div className="w-[180px] h-[180px]  flex justify center place-content-center place-items-center rounded-full border-2 border-white">
-                <img src={user.photoURL} className="w-[150px] h-[150px]  rounded-full" alt="" />
-
+            <div className="h-[350px] w-[70%] flex flex-col lg:flex-row justify-center bg-blue-100 rounded-2xl p-4  gap-4  place-items-center ">
+                <div className="w-[180px] h-[180px] flex justify center place-content-center place-items-center rounded-full border-2 border-black">
+                    <img src={user.photoURL} className="w-[150px] h-[150px]  rounded-full" alt="" />
 
                 </div>
                 <div className="font-serif text-[16px] lg:text-2xl  ">
                     <h2><span className="font-semibold">Name: </span>{user.displayName}</h2>
                     <h2><span className="font-semibold">Email: </span>{user.email}</h2>
-                    <h2><span className="font-semibold">Role: </span>Admin</h2>
+                    <h2><span className="font-semibold">Role: </span>User</h2>
 
                 </div>
                 
@@ -43,4 +42,4 @@ const AdminProfile = () => {
     );
 };
 
-export default AdminProfile;
+export default UserProfile;

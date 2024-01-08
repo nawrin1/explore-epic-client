@@ -72,7 +72,7 @@ const AllUsers = () => {
     }
     return (
         <div>
-            <h2 className="text-serif text-3xl text-center text-blue-900 font-bold ">ALL USERS</h2>
+            <h2 className="font-serif text-3xl text-center text-blue-900 font-bold ">ALL USERS</h2>
 <div className="flex justify-center items-center mx-auto h-min-h-screen text-[#012D48]">
 <div className="overflow-x-auto h-[400px] bg-slate-200">
   <table className="table table-xs  bg-slate-100 font-serif">

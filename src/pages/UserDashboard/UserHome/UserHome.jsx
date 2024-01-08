@@ -1,13 +1,16 @@
+
+
 import { NavLink, Outlet } from "react-router-dom";
 import { LuMessageSquareDashed } from "react-icons/lu";
 import { GoPackageDependents } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 // import img1 from "../../../assets/bg3-removebg-preview.png"
 import { HiOutlineHome } from "react-icons/hi";
-import './DashboardHome.css'
+import './UserHome.css'
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
-const DashboardHome = () => {
+
+const UserHome = () => {
   const {user}=useContext(AuthContext)
     return (
     
@@ -30,24 +33,22 @@ const DashboardHome = () => {
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
     <ul className="menu backgr p-4 w-60 min-h-full  text-base-content ">
-    <h2 className="relative text-2xl text-slate-500 font-serif text-center mb-7">Admin Dashboard</h2>
+    <h2 className="relative text-2xl text-slate-500 font-serif text-center mb-7">User Dashboard</h2>
     {/* <img src={img1} className="w-36 h-24"alt="" /> */}
                        <li className="dash font-Sora font-semibold">
                             <NavLink to="/"><div className=" mb-[2px] text-[20px]"><HiOutlineHome></HiOutlineHome></div>Home</NavLink>
                         </li>
                        <li className="dash font-Sora font-semibold">
-                            <NavLink to="/dashboard/profile"><div className=" mb-[2px] text-[20px]"><CgProfile></CgProfile></div>Profile</NavLink>
+                            <NavLink to="/userDashboard/userProfile"><div className=" mb-[2px] text-[20px]"><CgProfile></CgProfile></div>Profile</NavLink>
                         </li>
                    
-                       {/* <li className="font-Sora font-semibold">
-                            <NavLink to="/dashboard/surveyResponseAdmin"><div><LuMessageSquareDashed></LuMessageSquareDashed></div>Survey Response</NavLink>
-                        </li> */}
-                       <li className="dash font-Sora font-semibold">
+
+                       {/* <li className="dash font-Sora font-semibold">
                             <NavLink to="/dashboard/allUsers"><div  className=" mb-[2px] text-[20px]"><LuMessageSquareDashed></LuMessageSquareDashed></div>All Users</NavLink>
                         </li>
                        <li className="dash font-Sora font-semibold">
                             <NavLink to="/dashboard/addPackage"><div  className=" mb-[2px] text-[20px]"><GoPackageDependents></GoPackageDependents></div>Add Package</NavLink>
-                        </li>
+                        </li> */}
 
                        
 
@@ -59,4 +60,4 @@ const DashboardHome = () => {
     );
 };
 
-export default DashboardHome;
+export default UserHome;

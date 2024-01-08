@@ -12,6 +12,9 @@ import DashboardHome from "../pages/AdminDashboard/DashboardHome/DashboardHome";
 import AllUsers from "../pages/AdminDashboard/AllUsers/AllUsers";
 import AdminProfile from "../pages/AdminDashboard/AdminProfile/AdminProfile";
 import AddPackage from "../pages/AdminDashboard/AddPackage/AddPackage";
+import UserHome from "../pages/UserDashboard/UserHome/UserHome";
+import UserProfile from "../pages/UserDashboard/UserProfile/Userprofile";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -50,6 +53,15 @@ export const router = createBrowserRouter([
           element:<AddPackage></AddPackage>
         }
 
+      ]
+    },{
+      path:'userDashboard',
+      element:<PrivateRoute><UserHome></UserHome></PrivateRoute>,
+      children:[
+        {
+          path:'userProfile',
+          element:<PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+        }
       ]
     }
   ]);

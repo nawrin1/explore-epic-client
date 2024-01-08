@@ -10,7 +10,7 @@ import { Controller, useForm } from "react-hook-form";
 // import './CreateTask.css'
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import Social from '../../components/Social/Social';
 // import img1 from '../../../assets/task.png'
@@ -21,6 +21,8 @@ const Login = () => {
     // const {user}=useContext(AuthContext)
     const { register, handleSubmit, reset, formState: { errors },setError,control } = useForm();
     const {login}=useContext(AuthContext)
+    const location = useLocation();
+    // const from = location.state?.from?.pathname || "/";
     const navigate=useNavigate()
     const onSubmit=data=>{
         console.log(data.email, data.password)
@@ -42,7 +44,9 @@ const Login = () => {
             },
             willClose: () => {
                 clearInterval(timerInterval);
-                navigate("/")
+                // navigate("/")
+                // navigate(from, { replace: true });
+                navigate(location.state?location.state:"/")
             }
             }).then((result) => {
             /* Read more about handling dismissals below */

@@ -42,7 +42,9 @@ const Navbar = () => {
       <li className={`navli ${ useLocation().pathname=== '/' ? 'active' : ''}`}><Link to="/">Homepage</Link></li>
       <li className={`navli ${ useLocation().pathname=== '/about' ? 'active' : ''}`}><Link to="/about">About</Link></li>
       <li className={`navli ${ useLocation().pathname=== '/contact' ? 'active' : ''}`}><Link to="/contact">Contact</Link></li>
-      <li className={`navli ${ useLocation().pathname=== '/dashboard' ? 'active' : ''}`}><Link to="/dashboard">Dashboard</Link></li>
+      {
+        admin[0]?<li className={`navli ${ useLocation().pathname=== '/dashboard' ? 'active' : ''}`}><Link to="/dashboard">Dashboard</Link></li>:<li className={`navli ${ useLocation().pathname=== '/userDashboard/userProfile' ? 'active' : ''}`}><Link to="/userDashboard/userProfile">Dashboard</Link></li>
+      }
       
         {
           user?<li onClick={handleLogOut}><Link>Logout</Link></li>:<li className={`navli ${ useLocation().pathname=== '/login' ? 'active' : ''}`}><Link to="/login">Login</Link></li>
