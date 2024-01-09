@@ -9,6 +9,7 @@ import { HiOutlineHome } from "react-icons/hi";
 import './UserHome.css'
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
+import { MdBookmarks } from "react-icons/md";
 
 const UserHome = () => {
   const {user}=useContext(AuthContext)
@@ -35,11 +36,17 @@ const UserHome = () => {
     <ul className="menu backgr p-4 w-60 min-h-full  text-base-content ">
     <h2 className="relative text-2xl text-slate-500 font-serif text-center mb-7">User Dashboard</h2>
     {/* <img src={img1} className="w-36 h-24"alt="" /> */}
-                       <li className="dash font-Sora font-semibold">
+                       <li className="dash font-serif  font-semibold">
                             <NavLink to="/"><div className=" mb-[2px] text-[20px]"><HiOutlineHome></HiOutlineHome></div>Home</NavLink>
                         </li>
-                       <li className="dash font-Sora font-semibold">
+                       <li className="dash font-serif font-semibold">
                             <NavLink to="/userDashboard/userProfile"><div className=" mb-[2px] text-[20px]"><CgProfile></CgProfile></div>Profile</NavLink>
+                        </li>
+                       <li className="dash font-serif font-semibold">
+                            <NavLink to="/userDashboard/bookingList"><div className=" mb-[2px] text-[20px]"><MdBookmarks></MdBookmarks></div>Booking List</NavLink>
+                        </li>
+                       <li className="dash font-serif font-semibold">
+                            <NavLink to="/userDashboard/wishList"><div className=" mb-[2px] text-[20px]"><MdBookmarks></MdBookmarks></div>Wish List</NavLink>
                         </li>
                    
 

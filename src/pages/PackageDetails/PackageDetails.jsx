@@ -39,9 +39,9 @@ const PackageDetails = () => {
         visible={true}
       /></div>
     }
-    console.log(packages,"from packagedetails")
-    const{image,image2,image3,image4,image5,title,description,duration,itinerary,location,price,tour_type}=packages[0]
-    console.log(image)
+    // console.log(packages,"from packagedetails")
+    const{_id,image,image2,image3,image4,image5,title,description,duration,itinerary,location,price,tour_type}=packages[0]
+    console.log(_id,"from package")
 
 
     
@@ -136,7 +136,7 @@ const PackageDetails = () => {
               <hr className="text-center h-1 w-[50%] bg-[#edbd4c] justify-center mx-auto rounded-full mt-3 "></hr>
             <div className="backg flex  py-10">
              
-              <BookingForm price={price}></BookingForm>
+              <BookingForm price={price} id={_id} title={title}></BookingForm>
 
           
 

@@ -15,13 +15,15 @@ import { AwesomeButton } from "react-awesome-button";
 import './BookingForm.css'
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
-const BookingForm= ({price}) => {
+const BookingForm= ({price,id,title}) => {
 const {user}=useContext(AuthContext)
+const axiosSecure=useAxiosSecure()
 const[date,setDate]=useState(null)
 const [disable,setDisable]=useState(true)
-console.log(price)
+console.log(price,id)
     const { register, handleSubmit, reset, formState: { errors },setError,control } = useForm();
     const options = [
         { value: 'x', label: 'x' },
@@ -43,9 +45,9 @@ console.log(price)
       },[user])
     const onSubmit=async (data)=>{
         console.log(data)
-        const book={name:data.name, photo:data.photo,tourDate:date,email:user.email,guide:data.guide.value,prices:price}
+        const book={name:data.name, photo:data.photo,tourDate:date,email:user.email,guide:data.guide.value,prices:price,status:'In Review',id:id,title:title}
         console.log(book,"from book now")
-        const bookData = await axios.post('http://localhost:5000/booking', book)
+        const bookData = await axiosSecure.post('/booking', book)
             console.log(bookData.data)
             if(bookData.data.insertedId){
                 
@@ -87,6 +89,7 @@ console.log(price)
                     borderBottom: "1px solid black",
                     },
                     
+                    
                 }}
                 style={{ fontFamily: 'serif', width: '100%' }}
                 variant="standard"  
@@ -102,14 +105,17 @@ console.log(price)
                         label="Tourist Email"
                         type="text"
                       
-                        {...register("email", { required: true })}
+                        {...register("email")}
                         name="email"
                         InputProps={{
                             style: {
                             color: 'black',
                             borderBottom: "1px solid black",
                             },
+                            readOnly: true
                         }}
+                        value={user ? user.email : ""}
+                        
                         style={{ fontFamily: 'serif', width: '100%' }}
                         variant="standard"
                         />

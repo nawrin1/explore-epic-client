@@ -15,6 +15,8 @@ import AddPackage from "../pages/AdminDashboard/AddPackage/AddPackage";
 import UserHome from "../pages/UserDashboard/UserHome/UserHome";
 import UserProfile from "../pages/UserDashboard/UserProfile/Userprofile";
 import PrivateRoute from "./PrivateRoute";
+import BookingList from "../pages/UserDashboard/BookingList/BookingList";
+import WishList from "../pages/UserDashboard/Wishlist/Wishlist";
 
 export const router = createBrowserRouter([
     {
@@ -61,6 +63,12 @@ export const router = createBrowserRouter([
         {
           path:'userProfile',
           element:<PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+        },{
+          path:"bookingList",
+          element:<PrivateRoute><BookingList></BookingList></PrivateRoute>
+        },{
+          path:'wishList',
+          element:<PrivateRoute><WishList></WishList></PrivateRoute>
         }
       ]
     }

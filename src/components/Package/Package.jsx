@@ -10,8 +10,14 @@ import { FaHeart } from "react-icons/fa";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const Package = () => {
+    const{user}=useContext(AuthContext)
+    const axiosSecure=useAxiosSecure()
 
     const {data: pack = [], isFetched } = useQuery({
         queryKey: ['packages'], 
@@ -42,6 +48,26 @@ const Package = () => {
       /></div>
     }
     console.log(pack,"from package")
+    const handleWish=async(data)=>{
+        const wish={title:data.title,id:data._id,email:user.email}
+        console.log(wish,"from wishlist")
+        const wishData = await axiosSecure.post('/wishlist', wish)
+            console.log(wishData.data)
+            if(wishData.data.insertedId){
+                
+                
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `Added to wishlist`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                
+            }
+
+
+    }
 
 
 
@@ -57,11 +83,11 @@ const Package = () => {
                 <div className="di w-[230px] h-[400px] bg-slate-50  " >
                 <div className="relative">
                 <img src={pack[0].image} alt="" className="h-[190px]" />
-                <div className="absolute bottom-2 left-1 "><FaHeart className="text-white"></FaHeart></div>
+                <div className="absolute bottom-2 left-1 "onClick={()=>handleWish(pack[0])}><FaHeart className="text-white"></FaHeart></div>
 
                     </div>
 
-
+ 
 
 
                     <div className="p-2">
@@ -79,7 +105,7 @@ const Package = () => {
                 <div className="di w-[230px] h-[400px] lg:mt-20 bg-slate-50  " >
                     <div className="relative"> 
                     <img src={pack[1].image} alt="" className="h-[180px]" />
-                    <div className="absolute bottom-2 left-1 "><FaHeart className="text-white"></FaHeart></div>
+                    <div className="absolute bottom-2 left-1 " onClick={()=>handleWish(pack[1])}><FaHeart className="text-white"></FaHeart></div>
 
                     </div>
                     <div className="p-2">
@@ -96,7 +122,7 @@ const Package = () => {
                 <div className="di w-[230px] h-[400px] bg-slate-50 ">
                     <div className="relative">
                     <img src={pack[2].image} alt="" className="h-[190px]" />
-                    <div className="absolute bottom-2 left-1 "><FaHeart className="text-white"></FaHeart></div>
+                    <div className="absolute bottom-2 left-1 "onClick={()=>handleWish(pack[2])}><FaHeart className="text-white"></FaHeart></div>
 
                     </div>
                     <div className="p-2">
