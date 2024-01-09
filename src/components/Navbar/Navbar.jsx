@@ -6,11 +6,14 @@ import { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAdmin from '../../hooks/useAdmin';
+import useGuide from '../../hooks/useGuide';
 const Navbar = () => {
     console.log(useLocation().pathname)
     const {user,logout}=useContext(AuthContext)
     const navigate=useNavigate()
     const admin=useAdmin()
+    const guide=useGuide()
+    console.log(guide[0],"from nav guidde")
     console.log(admin[0],"from nav")
     const handleLogOut=()=>{
       logout()
@@ -43,8 +46,18 @@ const Navbar = () => {
       <li className={`navli ${ useLocation().pathname=== '/about' ? 'active' : ''}`}><Link to="/about">About</Link></li>
       <li className={`navli ${ useLocation().pathname=== '/contact' ? 'active' : ''}`}><Link to="/contact">Contact</Link></li>
       {
-        admin[0]?<li className={`navli ${ useLocation().pathname=== '/dashboard/profile' ? 'active' : ''}`}><Link to="/dashboard/profile">Dashboard</Link></li>:<li className={`navli ${ useLocation().pathname=== '/userDashboard/userProfile' ? 'active' : ''}`}><Link to="/userDashboard/userProfile">Dashboard</Link></li>
+        admin[0]&&<li className={`navli ${ useLocation().pathname=== '/dashboard/profile' ? 'active' : ''}`}><Link to="/dashboard/profile">Dashboard</Link></li>
       }
+      {
+        guide[0] &&<li className={`navli ${ useLocation().pathname=== '/guideDashboard' ? 'active' : ''}`}><Link to="/guideDashboard">Dashboard</Link></li>
+      }
+      {
+  user && !admin[0] && !guide[0] && (
+    <li className={`navli ${useLocation().pathname === '/userDashboard/userProfile' ? 'active' : ''}`}>
+      <Link to="/userDashboard/userProfile">Dashboard</Link>
+    </li>
+  )
+}
       
         {
           user?<li onClick={handleLogOut}><Link>Logout</Link></li>:<li className={`navli ${ useLocation().pathname=== '/login' ? 'active' : ''}`}><Link to="/login">Login</Link></li>

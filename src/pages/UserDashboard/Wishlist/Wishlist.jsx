@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
+import { RiDeleteBin5Fill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 
 const WishList = () => {
@@ -40,27 +42,27 @@ const WishList = () => {
       /></div>)
 
     }
-    // const handleAdmin=(data)=>{
-    //     console.log(data.email,"email")
-    //     axiosSecure.patch(`/admin/${data.email}`)
-    //     .then(res =>{
-    //         console.log(res.data)
-    //         if(res.data.modifiedCount > 0){
-    //             refetch();
-    //             Swal.fire({
-    //                 position: "top-end",
-    //                 icon: "success",
-    //                 title: `${data.name} is an Admin Now!`,
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //               });
-    //         }
-    //     })
+    const handleDelete=(_id)=>{
+        // console.log(id,"id")}
+        axiosSecure.delete(`/wishlist/${_id}`)
+        .then(res =>{
+            console.log(res.data)
+            if(res.data.deletedCount > 0){
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `Deleted!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })}
 
 
 
 
-    // }
+   
     // const handleGuide=(data)=>{
     //     console.log(data.email,"email")
     //     axiosSecure.patch(`/guide/${data.email}`)
@@ -92,7 +94,7 @@ const WishList = () => {
         <div>
             <h2 className="font-serif text-3xl text-center text-blue-900 font-bold ">WISHLIST</h2>
 <div className="flex justify-center items-center mx-auto h-min-h-screen text-[#012D48]">
-<div className="overflow-x-auto w-[70%] h-[400px] bg-slate-200">
+<div className="overflow-x-auto w-[80%] lg:w-[70%] h-[400px] bg-slate-200">
   <table className="table table-xs  bg-slate-100 font-serif">
     <thead className="bg-[#012D48] text-slate-100">
       <tr>
@@ -112,7 +114,7 @@ const WishList = () => {
           <tr key={idx} className="border-blue-950 border-b-[1px] py-8">
         <th>{idx+1}</th> 
         <td> 
-        <button  className="btn btn-xs  bg-blue-950 text-white" >remove</button>
+        <button  className="btn btn-xs btn-circle  bg-blue-950 text-white" onClick={()=>handleDelete(data._id)}><div><RiDeleteBin5Fill></RiDeleteBin5Fill></div></button>
    
         </td> 
         <td>
@@ -120,7 +122,7 @@ const WishList = () => {
         </td>
         
         <td> 
-        <button  className="btn btn-xs  bg-blue-950 text-white" >Details</button>
+       <Link to={`/details/${data.id}`}> <button  className="btn btn-xs  bg-blue-950 text-white">Details</button></Link>
    
         </td> 
         

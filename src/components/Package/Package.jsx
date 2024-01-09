@@ -14,15 +14,17 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Package = () => {
     const{user}=useContext(AuthContext)
     const axiosSecure=useAxiosSecure()
+    const axiosPublic=useAxiosPublic()
 
     const {data: pack = [], isFetched } = useQuery({
         queryKey: ['packages'], 
         queryFn: async() =>{
-            const res = await axios.get('http://localhost:5000/package');
+            const res = await axiosPublic.get('/package');
             return res.data;
         }
     })
