@@ -6,7 +6,7 @@ import { Watch } from "react-loader-spinner";
 
 
 const useAllUsers = () => {
-    const {users}=useContext(AuthContext)
+    const {user}=useContext(AuthContext)
     const axiosSecure=useAxiosSecure()
     const {data:allUsers=[],isFetched,refetch}=useQuery({
         queryKey:['allusers'],

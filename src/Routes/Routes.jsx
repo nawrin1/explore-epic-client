@@ -18,6 +18,7 @@ import PrivateRoute from "./PrivateRoute";
 import BookingList from "../pages/UserDashboard/BookingList/BookingList";
 import WishList from "../pages/UserDashboard/Wishlist/Wishlist";
 import GuideHome from "../pages/GuideDashboard/GuideHome/GuideHome";
+import GuideProfile from "../pages/GuideDashboard/GuideProfile/Guideprofile";
 
 export const router = createBrowserRouter([
     {
@@ -77,6 +78,12 @@ export const router = createBrowserRouter([
       ]
     },{
       path:'guideDashboard',
-      element:<PrivateRoute><GuideHome></GuideHome></PrivateRoute>
+      element:<PrivateRoute><GuideHome></GuideHome></PrivateRoute>,
+      children:[
+        {
+          path:'guideProfile',
+          element:<GuideProfile></GuideProfile>
+        }
+      ]
     }
   ]);

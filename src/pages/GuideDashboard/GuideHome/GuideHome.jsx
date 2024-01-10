@@ -19,7 +19,7 @@ const GuideHome = () => {
     <div className="drawer lg:drawer-open ">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content  ">
-<div className="flex justify-end p-4">
+<div className="flex justify-end p-4 absolute right-0 top-3">
 <label tabIndex={0} className="btn profile btn-ghost btn-circle avatar ">
              
              <div className="w-7 rounded-full ">
@@ -40,15 +40,10 @@ const GuideHome = () => {
                        <li className="dash font-serif  font-semibold">
                             <NavLink to="/"><div className=" mb-[2px] text-[20px]"><HiOutlineHome></HiOutlineHome></div>Home</NavLink>
                         </li>
-                       {/* <li className="dash font-serif font-semibold">
-                            <NavLink to="/userDashboard/userProfile"><div className=" mb-[2px] text-[20px]"><CgProfile></CgProfile></div>Profile</NavLink>
-                        </li>
                        <li className="dash font-serif font-semibold">
-                            <NavLink to="/userDashboard/bookingList"><div className=" mb-[2px] text-[20px]"><MdBookmarks></MdBookmarks></div>Booking List</NavLink>
+                            <NavLink to="/guideDashboard/guideProfile"><div className=" mb-[2px] text-[20px]"><CgProfile></CgProfile></div>Profile</NavLink>
                         </li>
-                       <li className="dash font-serif font-semibold">
-                            <NavLink to="/userDashboard/wishList"><div className=" mb-[2px] text-[20px]"><MdBookmarks></MdBookmarks></div>Wish List</NavLink>
-                        </li> */}
+
                    
 
                       

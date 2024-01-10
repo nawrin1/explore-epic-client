@@ -1,0 +1,30 @@
+ [
+      {
+        "name": "Rinto",
+        "photo": "https://i.ibb.co/dDZ1Cw8/correct.png?fbclid=IwAR1Iru9mNqTpbmSRBReRVN2bS4dwKIbvttnZzHlNlyGpANZAVgUzOFBzjUk",
+        "email": "damalrinto@gmail.com",
+        "phone": "+1234567890",
+        "address": "123 Main St, City, Country",
+        "education": [
+          {
+            "degree": "Bachelor of Science in Computer Science",
+            "school": "University of XYZ",
+            "graduationYear": 2020
+          }
+        ],
+        "workExperience": [
+          {
+            "position": "Software Engineer",
+            "company": "Tech Solutions Inc.",
+            "startDate": "2018-01-01",
+            "endDate": "2020-12-31",
+            "responsibilities": [
+              "Developed and maintained web applications using React and Node.js.",
+              "Collaborated with cross-functional teams for project delivery."
+            ]
+          }
+        ]
+      }
+    ]
+
+  
