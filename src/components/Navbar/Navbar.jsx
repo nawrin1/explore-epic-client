@@ -49,7 +49,7 @@ const Navbar = () => {
         admin[0]&&<li className={`navli ${ useLocation().pathname=== '/dashboard/profile' ? 'active' : ''}`}><Link to="/dashboard/profile">Dashboard</Link></li>
       }
       {
-        guide[0] &&<li className={`navli ${ useLocation().pathname=== '/guideDashboard' ? 'active' : ''}`}><Link to="/guideDashboard">Dashboard</Link></li>
+        guide[0] &&<li className={`navli ${ useLocation().pathname=== '/guideDashboard/guideProfile' ? 'active' : ''}`}><Link to="/guideDashboard/guideProfile">Dashboard</Link></li>
       }
       {
   user && !admin[0] && !guide[0] && (
